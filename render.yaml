@@ -1,5 +1,5 @@
 databases:
-  - name: mydb_alby
+  - name: mydb
     plan: free
     databaseName: mydb
     user: myuser
@@ -7,7 +7,7 @@ databases:
 services:
   - type: web
     plan: free
-    name: mysite
+    name: mydb_alby
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn crmp.asgi:application -k uvicorn.workers.UvicornWorker"
